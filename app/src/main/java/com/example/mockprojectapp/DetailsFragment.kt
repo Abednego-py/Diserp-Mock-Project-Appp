@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.example.mockprojectapp.databinding.FragmentDetailsBinding
@@ -32,7 +34,7 @@ class DetailsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -48,13 +50,20 @@ class DetailsFragment : Fragment() {
         binding.reposRes.text = args.currentDev.reposUrl
 
         binding.add.setOnClickListener {
+
             viewModel.addNewItem(
                 binding.loginRes.text.toString(),
                 binding.idRes.text.toString().toInt(),
                 args.currentDev.image,
                 args.currentDev.reposUrl
             )
+            Toast.makeText(context, "you have successfully added a new user", Toast.LENGTH_SHORT)
+                .show()
+        }
 
+        binding.view.setOnClickListener {
+            val action = DetailsFragmentDirections.actionDetailsFragmentToFavouritesFragment()
+            findNavController().navigate(action)
         }
     }
 

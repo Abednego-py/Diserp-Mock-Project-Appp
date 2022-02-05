@@ -29,6 +29,7 @@ class ProjectViewModel(private val itemDao: ProjectDao) : ViewModel() {
         )
     }
 
+
     fun addNewItem(login: String, profileId: Int, imageUrl: String, reposUrl: String) {
         val newItem = getNewItemEntry(login, profileId, imageUrl, reposUrl)
         insertItem(newItem)
