@@ -8,16 +8,16 @@
     android:padding="16dp"
     tools:context=".HomeFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/github_lagos_developers"
-        android:padding="8dp"
-        android:textSize="20sp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:layout_marginBottom="10dp"
-        android:background="@color/purple_500"
-        android:textColor="#ffff" />
+    <!--    <TextView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/github_lagos_developers"-->
+    <!--        android:padding="8dp"-->
+    <!--        android:textSize="20sp"-->
+    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Headline"-->
+    <!--        android:layout_marginBottom="10dp"-->
+    <!--        android:background="@color/purple_500"-->
+    <!--        android:textColor="#ffff" />-->
 
     <FrameLayout
         android:layout_width="match_parent"

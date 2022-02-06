@@ -8,23 +8,37 @@
     android:padding="16dp"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/favourite_developers"
-        android:padding="8dp"
-        android:textSize="20sp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:layout_marginBottom="10dp"
-        android:background="@color/purple_500"
-        android:textColor="#ffff" />
+    <!--    <TextView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/favourite_developers"-->
+    <!--        android:padding="8dp"-->
+    <!--        android:textSize="20sp"-->
+    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Headline"-->
+    <!--        android:layout_marginBottom="10dp"-->
+    <!--        android:background="@color/purple_500"-->
+    <!--        android:textColor="#ffff" />-->
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="15dp"
-        tools:listitem="@layout/itemlist"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            tools:listitem="@layout/itemlist"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deleteAll"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="130dp"
+            android:text="@string/delete_all" />
+    </FrameLayout>
+
 
 </LinearLayout>

@@ -54,24 +54,35 @@ class FavouritesFragment : Fragment() {
             }
         }
 
+        binding.deleteAll.setOnClickListener {
+            val db = (requireActivity().application as MainApp).database
+            db.projectDao().deleteAll()
+        }
     }
 
-    private fun showFinalScoreDialog(ent: ProjectEntity) {
-        MaterialAlertDialogBuilder(requireContext())
-            .setTitle("Hey!")
-            .setMessage("Do you want to delete this user?")
-            .setCancelable(false)
-            .setNegativeButton("Delete User") { _, _ ->
-                delete(ent)
-            }
-            .show()
-
-
+    private fun showFinalScoreDialog(entity: ProjectEntity) {
+        context?.let {
+            MaterialAlertDialogBuilder(it)
+                .setTitle("Hey!")
+                .setMessage("Do you want to delete this user?")
+                .setCancelable(false)
+                .setNegativeButton("Delete User") { _, _ ->
+                    delete(entity)
+                }
+                .setPositiveButton("cancel") { _, _ ->
+                    cancel()
+                }
+                .show()
+        }
     }
 
-    private fun delete(ent: ProjectEntity) {
+    private fun delete(entity: ProjectEntity) {
         val db = (requireActivity().application as MainApp).database
-        db.projectDao().deleteItem(ent)
+        db.projectDao().deleteItem(entity)
     }
+
+    private fun cancel() {
+    }
+
 
 }

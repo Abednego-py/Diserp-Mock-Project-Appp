@@ -17,4 +17,7 @@ interface ProjectDao {
 
     @Query("select * from ProjectEntity")
     fun retreiveAll(): Flow<List<ProjectEntity>>
+
+    @Query("delete from ProjectEntity")
+    fun deleteAll()
 }

@@ -14,6 +14,7 @@ class MainApp : Application() {
             this,
             ProjectDatabase::class.java, "user_db"
         )
+            .allowMainThreadQueries()
             .build()
     }
 }

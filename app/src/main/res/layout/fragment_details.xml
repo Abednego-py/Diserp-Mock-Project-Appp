@@ -1,34 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context="DetailsFragment"
         android:orientation="vertical">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/more_info_about_user"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:textSize="20sp"
-            android:padding="10dp" />
 
         <ImageView
             android:id="@+id/profile_image"
             android:layout_width="200dp"
             android:layout_height="150dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="60dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/ic_baseline_account_box_24" />
+            android:src="@drawable/ic_baseline_account_box_24"
+            android:contentDescription="@string/todo" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -56,6 +46,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/login"
                         android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
                         android:layout_marginStart="7dp" />
 
                     <TextView
@@ -80,6 +71,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/id"
                         android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
                         android:layout_gravity="left"
                         android:layout_marginStart="5dp" />
 
@@ -106,6 +98,7 @@
                         android:text="@string/repos_url"
                         android:textSize="20sp"
                         android:layout_gravity="left"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
                         android:layout_marginStart="5dp" />
 
                     <TextView
@@ -123,7 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="65dp"
             android:padding="5dp">
 
             <com.google.android.material.button.MaterialButton
@@ -132,7 +125,7 @@
                 android:layout_width="wrap_content"
                 android:background="@color/blue"
                 android:layout_height="wrap_content"
-                android:text="Add to Favourites"
+                android:text="@string/add_to_favourites"
                 android:layout_marginRight="40dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -141,7 +134,7 @@
                 android:layout_width="wrap_content"
                 android:background="@color/blue"
                 android:layout_height="wrap_content"
-                android:text="View Favourites" />
+                android:text="@string/view_favourites" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
