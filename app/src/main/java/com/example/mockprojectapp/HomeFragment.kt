@@ -54,6 +54,7 @@ class HomeFragment : Fragment() {
         val service = builder.create(Service::class.java)
 
         binding.progressBar.visibility = View.VISIBLE
+        binding.retry.visibility = View.GONE
         lifecycleScope.launch {
             try {
                 val response = service.listUsers()
@@ -73,7 +74,32 @@ class HomeFragment : Fragment() {
                 binding.recyclerView.adapter = adapter
             } catch (e: Exception) {
                 binding.progressBar.visibility = View.GONE
+                binding.retry.visibility = View.VISIBLE
+
                 Toast.makeText(context, "An error occured", Toast.LENGTH_SHORT).show()
+                binding.retry.setOnClickListener {
+
+                    binding.progressBar.visibility = View.VISIBLE
+                    lifecycleScope.launch {
+                        val response = service.listUsers()
+                        binding.progressBar.visibility = View.GONE
+
+                        val adapter = ProjectAdapter(response) { position ->
+                            val currentUser = response.items[position]
+                            val currentDev = UserObject(
+                                currentUser.avatar_url,
+                                currentUser.login, currentUser.id, currentUser.repos_url
+                            )
+
+                            val action =
+                                HomeFragmentDirections.actionHomeFragmentToDetailsFragment(
+                                    currentDev
+                                )
+                            findNavController().navigate(action)
+                        }
+                        binding.recyclerView.adapter = adapter
+                    }
+                }
             }
         }
 

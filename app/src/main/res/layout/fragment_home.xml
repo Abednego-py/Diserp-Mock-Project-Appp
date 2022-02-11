@@ -21,15 +21,15 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="15dp"
-            tools:listitem="@layout/itemlist"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/itemlist" />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -37,5 +37,15 @@
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+
     </FrameLayout>
+
+    <Button
+        android:id="@+id/retry"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="center|bottom"
+        android:text="@string/retry" />
+
 </LinearLayout>

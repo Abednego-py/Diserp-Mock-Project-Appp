@@ -17,7 +17,7 @@ class ProjectAdapter(private val items: RepoResponseX, private val block: (Int) 
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
         holder.login.text = items.items[position].login
         holder.avatar.load(items.items[position].avatar_url) {
-            error(R.drawable.ic_baseline_account_box_24)
+            error(R.drawable.ic_baseline_broken_image_24)
             placeholder(R.drawable.ic_baseline_account_box_24)
         }
         holder.itemView.setOnClickListener {
