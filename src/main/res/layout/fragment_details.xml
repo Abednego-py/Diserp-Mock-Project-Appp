@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="DetailsFragment"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_baseline_account_box_24"
+            android:contentDescription="@string/todo" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="10dp"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_gravity="left"
+                        android:id="@+id/login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login"
+                        android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+                        android:layout_marginStart="7dp" />
+
+                    <TextView
+                        android:id="@+id/login_res"
+                        android:layout_marginStart="30dp"
+                        android:layout_width="wrap_content"
+                        android:textSize="20sp"
+                        android:paddingStart="45dp"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/id"
+                        android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+                        android:layout_gravity="left"
+                        android:layout_marginStart="5dp" />
+
+                    <TextView
+                        android:id="@+id/id_res"
+                        android:layout_marginStart="30dp"
+                        android:layout_width="wrap_content"
+                        android:textSize="20sp"
+                        android:paddingStart="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/repos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/repos_url"
+                        android:textSize="20sp"
+                        android:layout_gravity="left"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+                        android:layout_marginStart="5dp" />
+
+                    <TextView
+                        android:id="@+id/repos_res"
+                        android:layout_marginStart="30dp"
+                        android:layout_width="wrap_content"
+                        android:textSize="20sp"
+                        android:layout_height="50dp"
+                        android:text="" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="65dp"
+            android:padding="5dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add"
+                android:layout_gravity="left|center"
+                android:layout_width="wrap_content"
+                android:background="@color/blue"
+                android:layout_height="wrap_content"
+                android:text="@string/add_to_favourites"
+                android:layout_marginRight="40dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/view"
+                android:layout_gravity="right|center"
+                android:layout_width="wrap_content"
+                android:background="@color/blue"
+                android:layout_height="wrap_content"
+                android:text="@string/view_favourites" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

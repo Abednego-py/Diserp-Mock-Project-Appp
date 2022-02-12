@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MockProjectApp</string>
+    <string name="profile_avatar">Profile Avatar</string>
+    <string name="repos_url">Repos Url :</string>
+    <string name="more_info_about_user">More Info About User</string>
+    <string name="login">Login :     </string>
+    <string name="id">Id :           </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="github_lagos_developers">Github Lagos Developers</string>
+    <string name="favourite_developers">Favourite Developers</string>
+    <string name="delete_favourites">Delete Favourites</string>
+    <string name="delete_all">Delete All</string>
+    <string name="add_to_favourites">Add to Favourites</string>
+    <string name="view_favourites">View Favourites</string>
+    <string name="todo">TODO</string>
+    <string name="retry">Retry</string>
+</resources>
