@@ -41,7 +41,6 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -73,6 +72,7 @@ class HomeFragment : Fragment() {
                 }
                 binding.recyclerView.adapter = adapter
             } catch (e: Exception) {
+
                 binding.progressBar.visibility = View.GONE
                 binding.retry.visibility = View.VISIBLE
 
@@ -81,23 +81,28 @@ class HomeFragment : Fragment() {
 
                     binding.progressBar.visibility = View.VISIBLE
                     lifecycleScope.launch {
-                        val response = service.listUsers()
-                        binding.progressBar.visibility = View.GONE
 
-                        val adapter = ProjectAdapter(response) { position ->
-                            val currentUser = response.items[position]
-                            val currentDev = UserObject(
-                                currentUser.avatar_url,
-                                currentUser.login, currentUser.id, currentUser.repos_url
-                            )
+                        try {
+                            val response = service.listUsers()
+                            binding.progressBar.visibility = View.GONE
 
-                            val action =
-                                HomeFragmentDirections.actionHomeFragmentToDetailsFragment(
-                                    currentDev
+                            val adapter = ProjectAdapter(response) { position ->
+                                val currentUser = response.items[position]
+                                val currentDev = UserObject(
+                                    currentUser.avatar_url,
+                                    currentUser.login, currentUser.id, currentUser.repos_url
                                 )
-                            findNavController().navigate(action)
+
+                                val action =
+                                    HomeFragmentDirections.actionHomeFragmentToDetailsFragment(
+                                        currentDev
+                                    )
+                                findNavController().navigate(action)
+                            }
+                            binding.recyclerView.adapter = adapter
+                        } catch (e: Exception) {
+                            Toast.makeText(context, "An error occured", Toast.LENGTH_SHORT).show()
                         }
-                        binding.recyclerView.adapter = adapter
                     }
                 }
             }
